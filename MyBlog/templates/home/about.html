@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+
+{% block aboutactive %} active {% endblock %}
+
+{% block title %}{% endblock %}
+
+
+{% block css %}
+<style>
+    .col-md-4 img{
+        border-radius: 30% 20% / 20% 25%;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="container my-4">
+    <h4>Meet P-CoDer Team Member</h4>
+    
+    <div class="row my-4">
+        {% for member in members%}
+
+        <div class="col-md-4">
+            <img src="/media/{{member.member_image}}" alt="my Photo" height="170px">
+            <h5 class="my-2"> Name : {{member.member_name}}</h5>
+            <p> Roll : {{member.member_work}}</p>
+            <h6> Email : {{member.member_email}}</h6>
+            <hr>
+            <p>{{member.member_content}}</p> 
+            <hr>           
+
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+
+
+{% block contactactive %} active {% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block css %}
+
+<style>
+    .form-group label {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<main role="main" class="container my-4">
+    <div class="row">
+        <div class="col-md-8 blog-main">
+            <h3 class="pb-4 mb-4 font-italic "><small>Any Problem And Suggeted Please </small> Contact My Team</h3>
+            <form method="post" action="/contact/">{% csrf_token %}
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                        placeholder="You Must be Use 3 Character">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Your Phone Number (with country code)</label>
+                    <input type="text" class="form-control" id="phone" name="phone"
+                        placeholder="You Must fill up  this field">
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Describe What You Want To Contact Me For Here</label>
+                    <textarea class="form-control" id="content" name="content" rows="3"
+                        placeholder="Your Message"></textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+        </div>
+
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">Our First Priorety I Will give Some Knowledge Our Youth and Love programming Students
+                </p>
+            </div>
+            <div class="p-4">
+                <h5 class="font-italic">LivePrograming Social Media</h5>
+                <ol class="list-unstyled">
+                    <li><a href=" https://www.facebook.com/sho.hel.14"  target="_blank">Facebook</a></li>
+                    <li><a href="#" target="_blank">Youtube</a></li>
+                    <li><a href="#" target="_blank">Admin Youtube</a></li>
+                </ol>
+            </div>
+        </aside>
+    </div>
+
+</main>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

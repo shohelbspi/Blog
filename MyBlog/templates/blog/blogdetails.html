@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+
+{% block blogactive %} active {% endblock %}
+
+{% block title %}{% endblock %}
+
+
+{% block css %}{% endblock %}
+
+
+{% block body %}
+
+<div class="container my-3">
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8 blog-main">
+
+                <div class="blog-post">
+                    <h2 class="blog-post-title">{{ post.title }}</h2>
+                    <p class="blog-post-meta">{{post.Stmp}} <a href="#"> {{ post.author }}</a></p>
+                    <hr>
+                    <p style="font-size: 18px;">{{post.content | safe}}</p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+</div>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

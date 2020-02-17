@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+
+
+{% block blogactive %} active {% endblock %}
+
+{% block title %}{% endblock %}
+
+
+{% block css %}{% endblock %}
+
+
+{% block body %}
+
+<div class="container my-4 text-center">
+    <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;"> All Articels of Coding Point</h3>
+
+
+    <div class="row my-4">
+        {% for post in posts %}
+        <div class="col-md-3 my-4">
+            <a href="/blog/{{post.slug}}"><img src="/media/{{post.image}}" alt="My Photo" height="150px"></a>
+            <p class="my-2">{{post.title}}</p>
+            <p class="my-2" style="color: green;">{{post.category}}</p>
+            <p>{{post.content |truncatechars:75 }}</p>
+            <a href="/blog/{{post.slug}}"><button type="button" class="btn btn-primary">Read More</button></a>
+        </div>
+        {% endfor %}
+    </div>
+    
+
+
+</div>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

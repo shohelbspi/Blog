@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+
+{% block blogactive %} active {% endblock %}
+
+{% block title %}{% endblock %}
+
+
+{% block css %}{% endblock %}
+
+
+{% block body %}
+
+<div class="container my-3">
+
+    <div class="error">
+        {% if posts|length < 1 %}
+
+        <p> No search result </p>
+        Your Search <b>{{query}} </b>- did not match any documents <br><br>
+        Suggestions :
+        <ul>
+
+            <li>Make sure that all words are spelled correctly.</li>
+            <li>Try different keywords.</li>
+            <li>Try more general keyword</li>
+        </ul>
+       
+    </div>
+    {% else %}
+
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-3">
+            <a class="mx-2" href="/blog/{{post.slug}}"><img src="/media/{{post.image}}" alt="My Photo" height="150px"></a>
+            <div class="icon mx-3">       
+            <p class="my-2">{{post.title}}</p>
+            <p class="my-2" style="color: green;">{{post.category}}</p>
+            <p>{{post.content |truncatechars:80 }}</p>
+            <a href="/blog/{{post.slug}}"><button type="button" class="btn btn-primary">Read More</button></a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        {% endif %}
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block js %}{% endblock %}
